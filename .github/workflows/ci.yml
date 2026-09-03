@@ -1,0 +1,20 @@
+name: CI Pipeline
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Docker Version
+        run: docker --version
+
+      - name: Run Health Script
+        run: |
+          chmod +x scripts/health.sh
+          ./scripts/health.sh
