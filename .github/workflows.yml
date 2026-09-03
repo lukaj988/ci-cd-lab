@@ -1,0 +1,19 @@
+name: CI Pipeline
+
+on:
+ push:
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Give execute permision
+        run: chmod +x scripts/health.sh
+
+      - name: Run health script
+        run: ./scripts/health.sh
