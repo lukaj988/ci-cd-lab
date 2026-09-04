@@ -10,11 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Give permision
-        run: chmod +x scripts/health.sh
-
-      - name: Run Health Script
-        run: ./scripts/health.sh
+      - name: Health Script
+        run: |
+          chmod +x scripts/health.sh
+          ./scripts/health.sh
 
       - name: Build Docker Image
-        run: docker build -t test-image .
+        run: |
+           docker build -t luka-nginx:v1 .

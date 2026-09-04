@@ -2,20 +2,27 @@
 
 echo "====== Health Check ======"
 
-echo "Datum"
+echo "Datum:"
 date
 
 echo ""
-echo "Hostname"
+echo "Hostname:"
 hostname
 
 echo ""
-echo "RAM"
+echo "Kernel:"
+uname -r
+
+echo ""
+echo "RAM:"
 free -h
 
 echo ""
-echo "Disk"
-df -h /
+echo "Disk:"
+df -h
+
+echo ""
+echo "Provera zavrsena"
 
 
 
