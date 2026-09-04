@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Docker Version
-        run: docker --version
+      - name: Give permision
+        run: chmod +x scripts/health.sh
 
       - name: Run Health Script
-        run: |
-          chmod +x scripts/health.sh
-          ./scripts/health.sh
+        run: ./scripts/health.sh
+
+      - name: Build Docker Image
+        run: docker build -t test-image .
